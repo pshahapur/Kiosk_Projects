@@ -1,0 +1,36 @@
+### Spring properties
+# Service registers under this name
+#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring:
+  application:
+    name: datasource-microservice
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    url: jdbc:mysql://localhost:3306/acc
+    username: root
+    password: root
+#  datasource:
+#    url: jdbc:mysql://172.22.52.23:3306/asn
+#    username: subhajit
+#    password: subhajit
+
+# Discovery Server Access
+eureka:
+    client:
+      serviceUrl:
+       # defaultZone: http://${DISCOVERYSERVER_PORT_10007_TCP_ADDR}:${DISCOVERYSERVER_PORT_10007_TCP_PORT}/eureka/
+       defaultZone: http://localhost:10007/eureka/
+
+# HTTP Server (Tomcat) Port
+server: 
+  port: 9002
+
+# Disable Spring Boot's "Whitelabel" default error page, so we can use our own
+error:
+  whitelabel:
+    enabled: false

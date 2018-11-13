@@ -1,0 +1,10 @@
+/build
+/.classpath
+/.project
+/.gradle
+/.settings
+/.plxarc
+/target
+*.swp
+wlp-install.properties
+/bin/

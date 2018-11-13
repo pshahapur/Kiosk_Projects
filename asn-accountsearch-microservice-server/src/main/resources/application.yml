@@ -1,0 +1,31 @@
+# Service registers under this name
+# Control the InternalResourceViewResolver:
+spring:
+  application:
+    name: accountsearch-microservice
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/views/
+#      suffix: .jsp
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+     # defaultZone: http://${DISCOVERYSERVER_PORT_10007_TCP_ADDR}:${DISCOVERYSERVER_PORT_10007_TCP_PORT}/eureka/
+       defaultZone: http://localhost:10007/eureka/
+
+# Disable Spring Boot's "Whitelabel" default error page, so we can use our own
+error:
+  whitelabel:
+    enabled:  false
+# HTTP Server (Tomcat) Port
+server: 
+  port: 9001
+  
+ribbon:
+ ReadTimeout: 10000
+ ConnectTimeout: 10000
+ OkToRetryOnAllOperations: true
+ MaxAutoRetriesNextServer: 3
+ MaxAutoRetries: 1
